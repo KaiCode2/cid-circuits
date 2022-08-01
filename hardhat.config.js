@@ -19,13 +19,8 @@ module.exports = {
     ptau: "https://hermezptau.blob.core.windows.net/ptau/powersOfTau28_hez_final_15.ptau",
     circuits: [
       {
-        name: "division",
+        name: "mimc_cid",
         // No protocol, so it defaults to groth16
-      },
-      {
-        name: "simple-polynomial",
-        // Generate PLONK
-        protocol: "plonk",
       },
       {
         name: "hash",
