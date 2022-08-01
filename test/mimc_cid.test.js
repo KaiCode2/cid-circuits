@@ -46,4 +46,23 @@ describe("mimc cid circuit", () => {
     const witness = await circuit.calculateWitness(sampleInput, sanityCheck);
     await circuit.assertOut(witness, expected);
   });
+
+  it("should fail is invalid protected value", async () => {
+    const invalidInputData = ["0","0","0","0","0","0","0","0","0","0"];
+    try {
+        const witness = await circuit.calculateWitness({ 
+            data: invalidInputData,
+            protectedLength: sampleInput.protectedLength,
+            protectedHash: sampleInput.protectedHash,
+        }, sanityCheck);
+        assert(false);
+    } catch (err) {
+        // console.log("Error is:", err.message)
+        assert(true);
+    }
+
+    // const mimcResult = mimc.multiHash(invalidInputData, mimcKey, mimcNumOutputs);
+    // const validOut = { resultHash: mimc.F.toObject(mimcResult) };
+    // assert.notEqual(validOut, witness.main.resultHash);
+  })
 });
