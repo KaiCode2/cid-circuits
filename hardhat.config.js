@@ -18,15 +18,18 @@ module.exports = {
     inputBasePath: "./circuits",
     ptau: "https://hermezptau.blob.core.windows.net/ptau/powersOfTau28_hez_final_15.ptau",
     circuits: [
+      // {
+      //   name: "mimc_cid",
+      //   // No protocol, so it defaults to groth16
+      // },
       {
-        name: "mimc_cid",
-        // No protocol, so it defaults to groth16
+        name: "cid"
       },
-      {
-        name: "hash",
-        // Explicitly generate groth16
-        protocol: "groth16",
-      },
+      // {
+      //   name: "hash",
+      //   // Explicitly generate groth16
+      //   // protocol: "groth16",
+      // },
     ],
   },
 };
