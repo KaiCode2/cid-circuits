@@ -1,4 +1,11 @@
+require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-circom");
+
+// TODO: add hh task
+const { encodeMessage } = require("./scripts/encodeString");
+task("encode", "Encode a string to big number")
+  .addPositionalParam("input", "string to encode")
+  .setAction(async ({ input }) => console.log(encodeMessage(input)));
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
