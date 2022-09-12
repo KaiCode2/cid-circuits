@@ -15,12 +15,12 @@ template Main() {
     var i;
 
     // 1. Convert input to bits
-    component bits = Num2Bits(256);
+    component bits = Num2Bits(254);
     bits.in <== data;
     
     // 2. Hash Input
-    component hasher = Sha256(256);
-    for (i = 0; i < 256; i++) {
+    component hasher = Sha256(254);
+    for (i = 0; i < 254; i++) {
         hasher.in[i] <== bits.out[i];
     }
 
